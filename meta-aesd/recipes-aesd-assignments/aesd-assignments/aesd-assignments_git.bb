@@ -37,7 +37,7 @@ TARGET_LDFLAGS += "-pthread -lrt"
 
 inherit update-rc.d
 INITSCRIPT_PACKAGES = "${PN}"
-INITSCRIPT_NAME:${PN} = "aesdsocket-start-stop.sh"
+INITSCRIPT_NAME:${PN} = "aesdsocket-start-stop"
 
 
 
