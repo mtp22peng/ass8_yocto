@@ -45,7 +45,7 @@ inherit update-rc.d
 INITSCRIPT_PACKAGES = "${PN}"
 INITSCRIPT_NAME:${PN} = "aesdsocket-start-stop.sh"
 
-
+INHIBIT_PACKAGE_STRIP="1"
 
 do_configure () {
 	:
