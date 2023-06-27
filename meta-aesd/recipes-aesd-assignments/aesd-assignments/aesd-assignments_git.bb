@@ -4,13 +4,16 @@ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda
 
 # TODO: Set this  with the path to your assignments rep.  Use ssh protocol and see lecture notes
 # about how to setup ssh-agent for passwordless access
-SRC_URI = "git://github.com/cu-ecen-aeld/assignments-3-and-later-mtp22peng;protocol=ssh;branch=master"
+SRC_URI = "git://github.com/cu-ecen-aeld/assignments-3-and-later-mtp22peng.git;protocol=ssh;branch=master"
 
 
+
+
+# TODO: set to reference a specific commit hash in your assignment repo
 
 
 PV = "1.0+git${SRCPV}"
-# TODO: set to reference a specific commit hash in your assignment repo
+
 SRCREV = "ed4eda1c681c8a5c9de67cdef3ff0ab0ed4ee517"
 
 # This sets your staging directory based on WORKDIR, where WORKDIR is defined at 
@@ -23,7 +26,7 @@ S = "${WORKDIR}/git/server"
 # See https://git.yoctoproject.org/poky/plain/meta/conf/bitbake.conf?h=kirkstone
 
 FILES:${PN} += "${bindir}/aesdsocket"
-
+FILES:${PN} += "${sysconfdir}/init.d/aesdsocket-start-stop.sh"
 
 
 RDEPENDS:{PN} += "libgcc"
